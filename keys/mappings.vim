@@ -35,7 +35,7 @@ nnoremap <silent> <S-TAB> :bprevious<CR>
 nnoremap <silent> <C-d> :bdelete<CR>
 nnoremap <silent> <C-D> :bdelete!<CR>
 
-" <TAB>: completion.
+" <TAB> completion
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><S-Tab>pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
@@ -67,11 +67,11 @@ nnoremap <silent>bh :bfirst<CR>
 nnoremap <silent>bl :blast<CR>
 
 " File Tree Mappings
-nnoremap <leader>e :CHADopen<CR>
-nnoremap <leader>te :CHADopen --version-ctl<CR>
+nnoremap <silent> <leader>e :CHADopen<CR>
+nnoremap <silent> <leader>te :CHADopen --version-ctl<CR>
 
 " Undo Tree Mappings
-nnoremap <silent> <leader>u :UndotreeToggle<CR>
+nnoremap <silent> <leader>u :UndotreeToggle<CR>:UndotreeFocus<CR>
 nnoremap <silent> <leader>fu :UndotreeFocus<CR>
 
 " Startify Session Mappings
@@ -85,3 +85,15 @@ function Replace()
   call feedkeys(":%s/" . expand("<cword>") . "//g", "n")
   execute "norm hhh"
 endfunction
+
+" Semshi Mappings
+nmap <silent> <leader>sr :Semshi rename<CR>
+
+nmap <silent> <leader>] :Semshi goto name next<CR>
+nmap <silent> <leader>[ :Semshi goto name prev<CR>
+
+nmap <silent> <leader>c :Semshi goto class next<CR>zz
+nmap <silent> <leader>C :Semshi goto class prev<CR>zz
+
+nmap <silent> <leader>f :Semshi goto function next<CR>zz
+nmap <silent> <leader>F :Semshi goto function prev<CR>zz

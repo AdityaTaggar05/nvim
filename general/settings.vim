@@ -5,6 +5,7 @@ set undofile                                  " Creates Undofiles for buffers
 set nowrap                                    " Display long lines as just one line
 set encoding=utf-8                            " The encoding displayed
 set fileencoding=utf-8                        " The encoding written to file
+set fileformats=dos                           " Just WINDOWS
 set pumheight=10                              " Makes popup menu smaller
 set ruler                                     " Show the cursor position all the time
 set cmdheight=2                               " More space for displaying messages
@@ -52,4 +53,3 @@ endfunction
 let g:UltiSnipsExpandTrigger="<C-Space>"
 let g:UltiSnipsJumpForwardTrigger="<Tab>"
 let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
-

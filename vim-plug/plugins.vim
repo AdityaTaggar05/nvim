@@ -12,12 +12,19 @@ call plug#begin('~/AppData/Local/nvim/autoload/plugged')
 	" Basic Plugins for Code
 	Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 	Plug 'nelstrom/vim-visual-star-search'
-	Plug 'sheerun/vim-polyglot' " Syntax Support
 	Plug 'jiangmiao/auto-pairs' " Auto Pairing for Brackets, etc
 	Plug 'preservim/nerdcommenter' " Commenter
 	Plug 'terryma/vim-multiple-cursors'
 
+	" Git Integration
+	Plug 'tpope/vim-fugitive'
+
+	" Start Screen
 	Plug 'mhinz/vim-startify'
+
+	" Syntax Highlighting
+	Plug 'sheerun/vim-polyglot'
+	Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 
 	" File Tree (ChadTree) & Undo Tree
 	Plug 'ms-jpq/chadtree', { 'branch': 'chad', 'do': 'python3 -m chadtree deps' }
@@ -33,7 +40,10 @@ call plug#begin('~/AppData/Local/nvim/autoload/plugged')
 	Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 	Plug 'honza/vim-snippets' " Snippets
 	Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' } " Additional GoLang Support
-	Plug 'mattn/emmet-vim' " Emmet
+
+	" Web
+	Plug 'mattn/emmet-vim'
+	Plug 'digitaltoad/vim-pug'
 
 	" Airline Status Bar
 	Plug 'vim-airline/vim-airline'

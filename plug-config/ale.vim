@@ -25,3 +25,4 @@ let b:ale_python_flake8_executable = 'D:/Program Files/Python39/Lib/site-package
 let b:ale_python_flake8_use_global = 1
 let b:ale_python_pylint_executable = 'D:/Program Files/Python39/Lib/site-packages/pylint'
 let b:ale_python_pylint_use_global = 1
+let b:ale_python_pylint_options = "--extension-pkg-whitelist=cv2,pygame"
