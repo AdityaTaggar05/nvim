@@ -38,11 +38,9 @@ return {
         },
         sections = {
           lualine_a = { { 'mode', separator = { right = '' }, right_padding = 2 } },
-          lualine_b = { 'filename', 'branch' },
-          lualine_c = {
-            '%=', --[[ add your center components here in place of this comment ]]
-          },
-          lualine_x = {},
+          lualine_b = { 'branch' },
+          lualine_c = { 'filename' },
+          lualine_x = { 'diff' },
           lualine_y = { 'filetype', { 'progress', separator = { left = '' } } },
           lualine_z = {
             { 'location', separator = { left = '' }, left_padding = 2 },
