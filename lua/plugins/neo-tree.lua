@@ -31,22 +31,9 @@ return {
               require("neo-tree.command").execute({ action = "close" })
             end
           },
-          {
-            event = "neo_tree_buffer_enter",
-            handler = function()
-              vim.cmd("highlight! Cursor blend=100")
-            end,
-          },
-          {
-            event = "neo_tree_buffer_leave",
-            handler = function()
-              vim.cmd("highlight! Cursor guibg=#5f87af blend=0")
-            end,
-          },
         },
       })
       vim.keymap.set('n', '<C-n>', ':Neotree filesystem toggle left<CR>', {})
-      vim.keymap.set('n', '<leader>gf', ':Neotree git_status float<CR>', {})
       vim.keymap.set('n', '<leader>gf', ':Neotree git_status float<CR>', {})
       vim.keymap.set('n', '<leader>bf', ':Neotree buffers reveal float<CR>', {})
     end,
