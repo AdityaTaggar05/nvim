@@ -9,13 +9,13 @@ return {
 		vim.keymap.set("n", "<TAB>", ":BufferNext<CR>")
 		vim.keymap.set("n", "<S-TAB>", ":BufferPrevious<CR>")
 		vim.keymap.set("n", "<C-w>", ":BufferClose<CR>")
-		vim.keymap.set("n", "<M-k>", ":BufferCloseAllButCurrent<CR>")
+		vim.keymap.set("n", "<M-Shift-k>", ":BufferCloseAllButCurrent<CR>")
 
 		-- Re-order to previous/next
 		vim.keymap.set("n", "<A-<>", "<Cmd>BufferMovePrevious<CR>", {})
 		vim.keymap.set("n", "<A->>", "<Cmd>BufferMoveNext<CR>", {})
 
-    -- Goto buffer in position...
+		-- Goto buffer in position...
 		vim.keymap.set("n", "<A-1>", "<Cmd>BufferGoto 1<CR>", {})
 		vim.keymap.set("n", "<A-2>", "<Cmd>BufferGoto 2<CR>", {})
 		vim.keymap.set("n", "<A-3>", "<Cmd>BufferGoto 3<CR>", {})
