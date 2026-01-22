@@ -14,12 +14,6 @@ return {
 						["e"] = function()
 							vim.api.nvim_exec("Neotree focus filesystem left", true)
 						end,
-						["bb"] = function()
-							vim.api.nvim_exec("Neotree focus buffers left", true)
-						end,
-						["gg"] = function()
-							vim.api.nvim_exec("Neotree focus git_status left", true)
-						end,
 					},
 				},
 				default_component_configs = {
@@ -41,7 +35,6 @@ return {
 			})
 			vim.keymap.set("n", "<C-n>", ":Neotree filesystem toggle left<CR>", {})
 			vim.keymap.set("n", "<leader>gf", ":Neotree git_status float<CR>", {})
-			vim.keymap.set("n", "<leader>bf", ":Neotree buffers reveal float<CR>", {})
 		end,
 	},
 }
