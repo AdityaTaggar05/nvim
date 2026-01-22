@@ -19,7 +19,12 @@ return {
 		config = function()
 			local cmp = require("cmp")
 			local luasnip = require("luasnip")
-			require("luasnip.loaders.from_vscode").lazy_load()
+
+			luasnip.config.setup({})
+
+			require("luasnip.loaders.from_lua").lazy_load({
+				paths = vim.fn.stdpath("config") .. "/lua/snippets",
+			})
 
 			cmp.setup({
 				preselect = cmp.PreselectMode.Item,
