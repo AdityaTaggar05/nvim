@@ -12,18 +12,33 @@ return {
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 			"MunifTanjim/nui.nvim",
-			"nvim-tree/nvim-web-devicons", -- optional, but recommended
-			"s1n7ax/nvim-window-picker", -- or "s1n7ax/nvim-window-picker"
+			"nvim-tree/nvim-web-devicons",
+			"s1n7ax/nvim-window-picker",
 		},
 		config = function()
 			require("neo-tree").setup({
 				source_selector = {
 					winbar = true,
 				},
+				mappings = {
+					["S"] = "split_with_window_picker",
+					["s"] = "vsplit_with_window_picker",
+				},
+				buffers = {
+					follow_current_file = {
+						leave_dirs_open = true,
+					},
+				},
+				filesystem = {
+					follow_current_file = {
+						enabled = true,
+						leave_dirs_open = true,
+					},
+				},
 				window = {
 					mappings = {
 						["e"] = function()
-							vim.api.nvim_exec("Neotree focus filesystem left", true)
+							vim.api.nvim_exec("Neotree reveal filesystem left", true)
 						end,
 					},
 				},
