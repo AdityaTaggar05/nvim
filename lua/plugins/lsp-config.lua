@@ -10,7 +10,7 @@ return {
 		opts = {},
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "stylua" },
+				ensure_installed = { "lua_ls", "stylua", "eslint" },
 			})
 		end,
 	},
@@ -23,6 +23,42 @@ return {
 			vim.lsp.config("lua_ls", { capabilities = capabilities })
 			vim.lsp.config("clangd", { capabilities = capabilities })
 
+			-- Linter for JS
+			local base_on_attach = vim.lsp.config.eslint.on_attach
+			vim.lsp.config("eslint", {
+				on_attach = function(client, bufnr)
+					if not base_on_attach then
+						return
+					end
+
+					base_on_attach(client, bufnr)
+					vim.api.nvim_create_autocmd("BufWritePre", {
+						buffer = bufnr,
+						command = "LspEslintFixAll",
+					})
+				end,
+			})
+
+			-- TypeScript / JavaScript
+			vim.lsp.enable("ts_ls")
+
+			-- ESLint
+			local base_on_attach = vim.lsp.config.eslint.on_attach
+			vim.lsp.config("eslint", {
+				on_attach = function(client, bufnr)
+					if not base_on_attach then
+						return
+					end
+
+					base_on_attach(client, bufnr)
+					vim.api.nvim_create_autocmd("BufWritePre", {
+						buffer = bufnr,
+						command = "LspEslintFixAll",
+					})
+				end,
+			})
+
+			-- Linter for GoLang
 			vim.lsp.config("gopls", {
 				on_attach = on_attach,
 				capabilities = capabilities,

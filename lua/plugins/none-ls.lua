@@ -7,7 +7,7 @@ return {
 		null_ls.setup({
 			sources = {
 				null_ls.builtins.formatting.stylua,
-				null_ls.builtins.formatting.prettier,
+				null_ls.builtins.formatting.prettierd,
 				null_ls.builtins.formatting.black,
 				null_ls.builtins.formatting.isort,
 			},
@@ -18,8 +18,6 @@ return {
 						group = augroup,
 						buffer = bufnr,
 						callback = function()
-							-- on 0.8, you should use vim.lsp.buf.format({ bufnr = bufnr }) instead
-							-- on later neovim version, you should use vim.lsp.buf.format({ async = false }) instead
 							vim.lsp.buf.format({ async = false })
 						end,
 					})

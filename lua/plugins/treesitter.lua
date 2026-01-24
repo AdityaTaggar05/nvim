@@ -7,7 +7,18 @@ return {
 			require("nvim-treesitter").setup({
 				install_dir = vim.fn.stdpath("data") .. "/site",
 			})
-			require("nvim-treesitter").install({ "go", "lua", "python", "cpp", "html", "css", "javascript", "json" })
+			require("nvim-treesitter").install({
+				"go",
+				"lua",
+				"python",
+				"cpp",
+				"html",
+				"css",
+				"javascript",
+				"json",
+				"typescript",
+				"tsx",
+			})
 			vim.api.nvim_create_autocmd("FileType", {
 				group = vim.api.nvim_create_augroup("EnableTreesitterHighlighting", { clear = true }),
 				desc = "Try to enable tree-sitter syntax highlighting",

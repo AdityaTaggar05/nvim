@@ -6,6 +6,7 @@ vim.cmd("set cmdheight=2")
 vim.cmd("set undofile")
 vim.g.mapleader = " "
 vim.g.background = "light"
+vim.opt.autochdir = true
 
 vim.opt.swapfile = false
 
