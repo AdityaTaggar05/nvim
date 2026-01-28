@@ -59,7 +59,7 @@ return {
 					},
 				},
 			})
-			vim.keymap.set("n", "<C-n>", ":Neotree filesystem toggle left<CR>", {})
+			vim.keymap.set("n", "<C-n>", ":Neotree filesystem reveal left<CR>", {})
 			vim.keymap.set("n", "<leader>gf", ":Neotree git_status float<CR>", {})
 		end,
 	},

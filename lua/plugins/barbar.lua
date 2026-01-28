@@ -8,7 +8,7 @@ return {
 		vim.g.barbar_auto_setup = false
 		vim.keymap.set("n", "<TAB>", ":BufferNext<CR>")
 		vim.keymap.set("n", "<S-TAB>", ":BufferPrevious<CR>")
-		vim.keymap.set("n", "<C-w>", ":BufferClose<CR>")
+		vim.keymap.set("n", "<M-w>", ":BufferClose<CR>")
 		vim.keymap.set("n", "<M-K>", ":BufferCloseAllButCurrent<CR>")
 
 		-- Re-order to previous/next
