@@ -46,7 +46,7 @@ return {
 					map("n", "<leader>hR", gitsigns.reset_buffer)
 
 					map("n", "<leader>gp", ":Gitsigns preview_hunk<CR>")
-					map("n", "<leader>gd", ":Gitsigns diffthis<CR>")
+					map("n", "<leader>gg", ":Gitsigns diffthis<CR>")
 					map("n", "<leader>gt", ":Gitsigns toggle_current_line_blame<CR>")
 					map("o", "ih", ":Gitsigns select_hunk<CR>")
 					map("x", "ih", ":Gitsigns select_hunk<CR>")
