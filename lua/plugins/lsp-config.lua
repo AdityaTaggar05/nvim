@@ -23,21 +23,8 @@ return {
 			vim.lsp.config("lua_ls", { capabilities = capabilities })
 			vim.lsp.config("clangd", { capabilities = capabilities })
 
-			-- Linter for JS
-			local base_on_attach = vim.lsp.config.eslint.on_attach
-			vim.lsp.config("eslint", {
-				on_attach = function(client, bufnr)
-					if not base_on_attach then
-						return
-					end
-
-					base_on_attach(client, bufnr)
-					vim.api.nvim_create_autocmd("BufWritePre", {
-						buffer = bufnr,
-						command = "LspEslintFixAll",
-					})
-				end,
-			})
+			-- Emmet
+			vim.lsp.config("emmet_ls", { capabilities = capabilities })
 
 			-- TypeScript / JavaScript
 			vim.lsp.enable("ts_ls")
@@ -114,6 +101,12 @@ return {
 				group = vim.api.nvim_create_augroup("UserLspConfig", {}),
 				callback = function(_)
 					vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
+					vim.keymap.set(
+						"n",
+						"<F2>",
+						vim.lsp.buf.rename,
+						{ noremap = true, silent = true, desc = "LSP Rename" }
+					)
 					vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
 					vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
 					vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
