@@ -6,6 +6,27 @@ return {
 	},
 	init = function()
 		vim.g.barbar_auto_setup = false
+
+		require("barbar").setup({
+			icons = {
+				diagnostics = {
+					[vim.diagnostic.severity.ERROR] = { enabled = true, icon = "ﬀ" },
+					[vim.diagnostic.severity.WARN] = { enabled = false },
+					[vim.diagnostic.severity.INFO] = { enabled = false },
+					[vim.diagnostic.severity.HINT] = { enabled = true },
+				},
+				gitsigns = {
+					added = { enabled = true, icon = "+" },
+					changed = { enabled = true, icon = "~" },
+					deleted = { enabled = true, icon = "-" },
+				},
+			},
+			sidebar_filetypes = {
+				["neo-tree"] = true,
+			},
+			letters = "asdfjkl;ghnmxcvbziowerutyqpASDFJKLGHNMXCVBZIOWERUTYQP",
+		})
+
 		vim.keymap.set("n", "<TAB>", ":BufferNext<CR>")
 		vim.keymap.set("n", "<S-TAB>", ":BufferPrevious<CR>")
 		vim.keymap.set("n", "<M-w>", ":BufferClose<CR>")
