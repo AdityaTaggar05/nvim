@@ -12,8 +12,9 @@ vim.opt.autochdir = true
 vim.opt.swapfile = false
 vim.wo.number = true
 
-local undodir = vim.fn.expand(string.sub(vim.env.MYVIMRC, 0, -9) .. "undodir//")
+local config_dir = vim.fn.fnamemodify(vim.env.MYVIMRC, ":h")
+local undodir = config_dir .. "/undodir"
 if vim.fn.isdirectory(undodir) == 0 then
 	vim.fn.mkdir(undodir, "p")
 end
-vim.opt.undodir = vim.fn.expand(undodir)
+vim.opt.undodir = undodir .. "//"
