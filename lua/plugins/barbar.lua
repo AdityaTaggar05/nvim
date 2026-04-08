@@ -25,6 +25,7 @@ return {
 				["neo-tree"] = true,
 			},
 			letters = "asdfjkl;ghnmxcvbziowerutyqpASDFJKLGHNMXCVBZIOWERUTYQP",
+			semantic_letters = false,
 		})
 
 		vim.keymap.set("n", "<TAB>", ":BufferNext<CR>")
