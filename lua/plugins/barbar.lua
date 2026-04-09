@@ -21,9 +21,6 @@ return {
 					deleted = { enabled = true, icon = "-" },
 				},
 			},
-			sidebar_filetypes = {
-				["neo-tree"] = true,
-			},
 			letters = "asdfjkl;ghnmxcvbziowerutyqpASDFJKLGHNMXCVBZIOWERUTYQP",
 			semantic_letters = false,
 		})
